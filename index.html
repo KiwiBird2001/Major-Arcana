@@ -1,3 +1,9 @@
+<html>
+<head>
+<title>Major Arcana</title>
+</head>
+<body>
+
 <script>
 function draw() {
 
@@ -25,19 +31,18 @@ let deck = [
 "20-the-judgment",
 "21-the-world",
 "22-the-fool"
-]; // https://www.7tarot.com/card/img/arcana/~.jpg
+];
 
 drawn = deck[Math.floor(Math.random() * deck.length())];
-
-source = "https://www.7tarot.com/card/img/arcana/" + drawn + ".jpg";
-
+source = "https://www.7tarot.com/card/img/arcana/" + drawn + ".jpg"; // https://www.7tarot.com/card/img/arcana/~.jpg
 document.getElementById("card").src = drawn;
 
 }
 </script>
 
 <button onclick="draw()">Draw a card</button>
-
 <br><br><br>
-
 <img id="card" src="">
+
+</body>
+</html>
