@@ -1,12 +1,12 @@
 <html>
-<head>
+<head id="head">
 <title>Major Arcana</title>
 <style>
 #draws {
 
 font-size: 42px;
-padding: 10px;
-margin: 10px;
+/*padding: 10px;
+margin: 10px;*/
 
 }
 </style>
@@ -38,23 +38,37 @@ var deck = [
 "22-the-fool"
 ];
 
+for (var i = 0; i < deck.length; i++) {
+
+document.getElementById("head").innerHTML += "<link rel='preload' href='https://www.7tarot.com/card/img/arcana/" + deck
+
+[i] + ".jpg' as='image'>";
+
+}
+
 var draws = 0;
 
 function draw() {
 
 let card = document.getElementById("card");
+let counter = document.getElementById("draws");
+
 drawn = "https://www.7tarot.com/card/img/arcana/" + deck[Math.floor(Math.random() * deck.length)] + ".jpg"; // 
 
 https://www.7tarot.com/card/img/arcana/~.jpg
 card.src = drawn;
 draws += 1;
-document.getElementById("draws").innerHTML = draws;
+counter.innerHTML = draws;
 
 }
 function reset() {
 
+let card = document.getElementById("card");
+let counter = document.getElementById("draws");
+
 draws = 0;
-document.getElementById("draws").innerHTML = draws;
+counter.innerHTML = draws;
+card.src = "";
 
 }
 </script>
