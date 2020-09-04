@@ -1,6 +1,15 @@
 <html>
 <head>
 <title>Major Arcana</title>
+<style>
+#draws {
+
+font-size: 42px;
+padding: 10px;
+margin: 10px;
+
+}
+</style>
 <script>
 
 var deck = [
@@ -29,11 +38,23 @@ var deck = [
 "22-the-fool"
 ];
 
+var draws = 0;
+
 function draw() {
 
-drawn = deck[Math.floor(Math.random() * deck.length)];
-source = "https://www.7tarot.com/card/img/arcana/" + drawn + ".jpg"; // https://www.7tarot.com/card/img/arcana/~.jpg
-document.getElementById("card").src = source;
+let card = document.getElementById("card");
+drawn = "https://www.7tarot.com/card/img/arcana/" + deck[Math.floor(Math.random() * deck.length)] + ".jpg"; // 
+
+https://www.7tarot.com/card/img/arcana/~.jpg
+card.src = drawn;
+draws += 1;
+document.getElementById("draws").innerHTML = draws;
+
+}
+function reset() {
+
+draws = 0;
+document.getElementById("draws").innerHTML = draws;
 
 }
 </script>
@@ -41,8 +62,10 @@ document.getElementById("card").src = source;
 <body>
 
 <button onclick="draw()">Draw a card</button>
+<div id="draws">0</div>
+<button onclick="reset()">Reset</button>
 <br><br><br>
-<img id="card" src="https://www.7tarot.com/card/img/arcana/22-the-fool.jpg">
+<img id="card" src="">
 
 </body>
 </html>
