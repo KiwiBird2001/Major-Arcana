@@ -1,0 +1,43 @@
+<script>
+function draw() {
+
+let deck = [
+"1-the-magician",
+"2-the-high-priestess",
+"3-the-empress",
+"4-the-emperor",
+"5-the-hierophant",
+"6-the-lovers",
+"7-the-chariot",
+"8-strength",
+"9-the-hermit",
+"10-wheel-of-fortune",
+"11-justice",
+"12-the-hanged-man",
+"13-death",
+"14-temperance",
+"15-the-devil",
+"16-the-tower",
+"17-the-star",
+"18-the-moon",
+"19-the-sun",
+"20-the-judgement",
+"20-the-judgment",
+"21-the-world",
+"22-the-fool"
+]; // https://www.7tarot.com/card/img/arcana/~.jpg
+
+drawn = deck[Math.floor(Math.random() * deck.length())];
+
+source = "https://www.7tarot.com/card/img/arcana/" + drawn + ".jpg";
+
+document.getElementById("card").src = drawn;
+
+}
+</script>
+
+<button onclick="draw()">Draw a card</button>
+
+<br><br><br>
+
+<img id="card" src="">
