@@ -3,7 +3,7 @@
 <title>Major Arcana</title>
 <script>
 
-let deck = [
+var deck = [
 "1-the-magician",
 "2-the-high-priestess",
 "3-the-empress",
@@ -29,7 +29,7 @@ let deck = [
 "22-the-fool"
 ];
 
-function draw(deck) {
+function draw() {
 
 drawn = deck[Math.floor(Math.random() * deck.length())];
 source = "https://www.7tarot.com/card/img/arcana/" + drawn + ".jpg"; // https://www.7tarot.com/card/img/arcana/~.jpg
@@ -40,7 +40,7 @@ document.getElementById("card").src = drawn;
 </head>
 <body>
 
-<button onclick="draw(deck)">Draw a card</button>
+<button onclick="draw()">Draw a card</button>
 <br><br><br>
 <img id="card" src="">
 
